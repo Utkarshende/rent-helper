@@ -21,12 +21,13 @@ function AllMaid() {
       </p>
       <div className='flex flex-wrap justify-center mt-8'>
           {MAIDS_CONFIG.map((maidData)=>{
-            const {id,name,experience,category,rating,imgUrl}=maidData;
+            const {id,name,experience,charges,category,rating,imgUrl}=maidData;
 return(<MaidCard 
 key={id}
 id={id}
 name={name}
 experience={experience}
+charges={charges}
 category={category}
 rating={rating}
 imgUrl={imgUrl}
