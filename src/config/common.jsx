@@ -53,4 +53,17 @@ const REVIEWS_CONFIG=[
     avatar:"https://i.pravatar.cc/150?img=4"
   }
 ]
-export {FEATURES_CONFIG, REVIEWS_CONFIG};
+const COUPON_CODES={
+ SAVE10:{
+    discount:10,
+    description:"Get 10% off on your first booking."
+  },
+  FREERIDE:{  
+    discount:100,
+    description:"Get 20% off on bookings over ₹2000."  
+  },
+  FAMILY50:{
+    discount:50,
+    description:"Get 30% off during the festive season."
+}}
+export {FEATURES_CONFIG, REVIEWS_CONFIG,COUPON_CODES};
