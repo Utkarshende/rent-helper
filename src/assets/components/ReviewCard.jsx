@@ -16,7 +16,7 @@ function ReviewCard({
      className='rounded-full w-16 h-16'/>
      <div>
         <h3 className='text-lg font-semibold'>{name}</h3>
-        <RatingStars rating={rating}/>
+        <RatingStars rating={rating} />
         <p className='text-gray-400'>{review}</p>
      </div>
      

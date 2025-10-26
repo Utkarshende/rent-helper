@@ -31,8 +31,7 @@ charges={charges}
 category={category}
 rating={rating}
 imgUrl={imgUrl}
-/> )
-          })}
+/> ) })}
       </div>
     </div>
   )
