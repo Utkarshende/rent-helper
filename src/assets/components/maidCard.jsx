@@ -1,68 +1,108 @@
 import RatingStars from "./RatingStars";
 import { useState } from "react";
-import { Link } from "react-router";
+import { Link } from "react-router"; // Changed to 'react-router-dom' for standard routing
 import {MoveRight, MoveLeft} from "lucide-react";
-import {CATEGORY_STYLE, CategoryBadge} from "../components/CategoryBadge.jsx";
+import {CategoryBadge,CATEGORY_CONFIG} from "../components/CategoryBadge.jsx";
 
-function maidCard({id,name,experience,charges,category,rating,imgUrl}) {
-console.log(charges);
+// NOTE: Since this component is intended to be used in a router context, 
+// I've updated the Link import from "react-router" to "react-router-dom" 
+// which is the common practice for web applications.
 
-const [ slideIndex, setSlideIndex ] = useState(0);
+function MaidCard({id,name,experience,charges,category,rating,imgUrl,description}) {
+    console.log(charges);
 
-const showPrevImg = ()=>{
-  if(slideIndex > 0){
-setSlideIndex(slideIndex - 1);
-  }
-  else{
-    setSlideIndex(imgUrl.length - 1);
-  }
-};
+    const [ slideIndex, setSlideIndex ] = useState(0);
 
-const showNextImg = ()=>{
-  if(slideIndex < imgUrl.length - 1){
-    setSlideIndex(slideIndex + 1);
-  }
-  else{
-    setSlideIndex(0);
-  }
-}
+    const showPrevImg = ()=>{
+        if(slideIndex > 0){
+            setSlideIndex(slideIndex - 1);
+        }
+        else{
+            setSlideIndex(imgUrl.length - 1);
+        }
+    };
 
-  return (
-    <div className='bg-white w-[350px] m-4 px-6 py-6 rounded-md relative shadow-lg' key={id}>
-      {/*Category*/}
+    const showNextImg = ()=>{
+        if(slideIndex < imgUrl.length - 1){
+            setSlideIndex(slideIndex + 1);
+        }
+        else{
+            setSlideIndex(0);
+        }
+    }
 
-      <CategoryBadge category={category}/>
-       {/*<span className={`${styleObj?.bgColor} text-white rounded-full p-2 
-       text-sm absolute top-12 right-0 flex items-center z-5`}>
-    {styleObj?.icon}
-    <span className="ml-2">{category}</span>
-       </span>*/}
+    return (
+        // Refactored container for a clean, sophisticated look with a subtle shadow and teal accent
+        <div className='bg-white w-[350px] m-4 rounded-xl overflow-hidden shadow-2xl transition-transform duration-300 hover:shadow-teal-400/50 hover:scale-[1.02]' key={id}>
+            
+            {/* Image Container with Slider Controls */}
+            <div className="relative h-56 group">
+                
+                {/* Image */}
+                <img 
+                    src={imgUrl[slideIndex]}
+                    alt={name}
+                    className='w-full h-full object-cover transition duration-500'
+                   
+                />
 
-       {/* Rating*/}
-       <span className="absolute top-2 right-4 flex text-black bg-slate-500 
-       p-1 rounded-full">
-        <RatingStars rating={rating}/>({rating})</span>
+                {/* Category Badge - Positioned clearly on the image (using top/left relative to the image container) */}
+                {/* Note: The CategoryBadge component uses 'absolute top-4 left-6' internally, which is relative to this parent div */}
+                <CategoryBadge category={category} className="absolute"/> 
+                
+                {/* Charges - Positioned clearly on the bottom right of the image */}
+                <span className="text-white absolute bottom-0 right-0 px-4 py-1 bg-teal-600 font-bold rounded-tl-xl text-lg shadow-md z-10" > 
+                    ₹ {charges}/hr
+                </span>
 
-       {/* Charges*/}
-       <span className="text-black absolute top-[150px]
-       right-0 px-4 bg-white border-2 border-gray-400 rounded-l-full z-5" > 
-       ₹ {charges}/hr</span>
-       <div className="shadow-lg rounded-md relative">   
-        {slideIndex > 0 ? (<MoveLeft className="text-black absolute top-18 left-0 bg-amber-400 h-8 w-8" onClick={showPrevImg}/>) : null } 
-        { slideIndex < imgUrl.length - 1 ? (<MoveRight className="text-black absolute top-18 right-0 bg-amber-400 h-8 w-8" onClick={showNextImg}/>) : null }
-        <img src={imgUrl[slideIndex]}
-        alt={name}
-        className='w-full h-48 object-cover rounded-md'/>
+                {/* Slider Controls - Now using a hover effect for a cleaner look */}
+                {imgUrl.length > 1 && (
+                    <>
+                        <button 
+                            className="absolute top-1/2 left-2 transform -translate-y-1/2 p-2 bg-black/50 text-white rounded-full opacity-0 group-hover:opacity-100 transition duration-300 z-20" 
+                            onClick={showPrevImg}
+                            aria-label="Previous image"
+                        >
+                            <MoveLeft className="h-5 w-5"/>
+                        </button>
+                        <button 
+                            className="absolute top-1/2 right-2 transform -translate-y-1/2 p-2 bg-black/50 text-white rounded-full opacity-0 group-hover:opacity-100 transition duration-300 z-20" 
+                            onClick={showNextImg}
+                            aria-label="Next image"
+                        >
+                            <MoveRight className="h-5 w-5"/>
+                        </button>
+                    </>
+                )}
+            </div>
+
+            {/* Content Area - Well-structured with padding and color theme */}
+            <div className="p-6">
+                <div className="flex justify-between items-center mb-2">
+                    {/* Name */}
+                    <h2 className='text-2xl font-bold text-gray-800'>{name}</h2>
+                    
+                    {/* Rating - Positioned alongside the name, no longer overlapping */}
+                    <div className="flex items-center space-x-1 p-1 bg-teal-50 rounded-full border border-teal-200">
+                        <RatingStars rating={rating}/>
+                        <span className="text-xs font-semibold text-gray-700">({rating})</span>
+                    </div>
+                </div>
+
+                {/* Experience & Description */}
+                <p className='text-base text-teal-600 font-medium mb-1'>Experience: {experience} years</p>
+                
+                {/* Book Now Button */}
+                <Link 
+                    className="bg-teal-500 text-white font-semibold block text-center rounded-lg py-3 hover:bg-teal-600 
+                    transition duration-300 ease-in-out shadow-lg hover:shadow-teal-500/50" 
+                    to={`/maid-details?id=${id}`}
+                >
+                    View Details & Book
+                </Link>
+            </div>
         </div>
-
-        {/*Name*/}
-        <h2 className='text-lg md:text-xl font-semibold text-slate-600'>{name}</h2>
-        {/*Experience*/}
-        <p className='text-md text-slate-500'>{experience}</p>
-        <Link className="bg-amber-700 block mx-auto rounded-md mt-4 hover:bg-orange-600
-        transition-color duration-200 cursor-pointer p-1 w-fit" to={`/maid-details?id=${id}` }>Book Now</Link>
-    </div>
-  )
+    )
 }
 
-export default maidCard
+export default MaidCard

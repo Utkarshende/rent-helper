@@ -1,76 +1,101 @@
-import Img1 from "./../assets/maidImages/1.jpg";
-import Img2 from "./../assets/maidImages/2.jpg";
-import Img3 from "./../assets/maidImages/3.jpg";
-import Img4 from "./../assets/maidImages/4.jpg";
+const MAIDS_CONFIG = [
+    {
+        id: 101,
+        name: "Rama Shree",
+        charges: 250,
+        experience: 5,
+        rating: 4.8,
+        category: "Cleaning",
+        imgUrl: [
+            "https://t4.ftcdn.net/jpg/03/53/89/07/360_F_353890760_4TJwWPFZkG0C2EbHdAPQ1JNKokPbKQGE.jpg",
+            
+        ],
+        description: "Specializes in deep cleaning and disinfection. Uses eco-friendly products.",
+    },
+    {
+        id: 102,
+        name: "Bina Devi",
+        charges: 350,
+        experience: 8,
+        rating: 4.9,
+        category: "Cooking",
+        imgUrl: [
+            "https://media.istockphoto.com/id/1214757045/photo/portrait-of-housekeeper-maid-cooking-at-home.jpg?s=612x612&w=0&k=20&c=P6h1JCC2HF-9XXELIvB23iwhmNB0zR7NLJieOCgspmQ=",
+        ],
+        description: "Gourmet chef capable of Indian, Italian, and Continental cuisine.",
+    },
+    {
+        id: 103,
+        name: "Savita Das",
+        charges: 280,
+        experience: 3,
+        rating: 4.2,
+        category: "Babysitting",
+        imgUrl: [
+            "https://maidservicesinindia.com/wp-content/uploads/2025/02/happy-young-mother-playing-cute-little-child-playing-floor-blonde-female-babysitting-adorable-infant-sitting-carpet-bedroom-holding-yellow-duck-toy-motherhood-childcare-concept-scaled.jpg",
+        ],
+        description: "Certified in CPR and first aid. Experienced with infants and toddlers.",
+    },
+    {
+        id: 104,
+        name: "Dada Vaidya",
+        charges: 400,
+        experience: 10,
+        rating: 4.7,
+        category: "Elderly Care",
+        imgUrl: [
+            "https://innovedge.com.my/wp-content/uploads/2024/07/eldercare-s-1024x683-1.webp",
+        ],
+        description: "Compassionate care for seniors, including mobility assistance and medication reminders.",
+    },
+    {
+        id: 105,
+        name: "Naina Thakre ",
+        charges: 200,
+        experience: 2,
+        rating: 4.0,
+        category: "Housekeeping",
+        imgUrl: [
+            "https://img.freepik.com/free-photo/chambermaid-preparing-hotel-room_23-2148095223.jpg?semt=ais_hybrid&w=740&q=80",
+        ],
+        description: "General household chores, laundry, and organization.",
+    },
+    {
+        id: 106, 
+        name: "Ravi Kishan",
+        charges: 320,
+        experience: 6,
+        rating: 4.5,
+        category: "Driving",
+        imgUrl: [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVGGUqvSggqnrKFM3nv4XYOHspkGFd4wC1bw&s",
+        ],
+        description: "Professional chauffeur with clean driving record for daily commutes and long trips.",
+    },
+    {
+        id: 107, 
+        name: "Sonia Patel",
+        charges: 230,
+        experience: 4,
+        rating: 4.3,
+        category: "Gardening",
+        imgUrl: [
+            "https://media.istockphoto.com/id/1341198163/photo/a-woman-taking-care-and-watering-houseplants-by-watering-can-at-home.jpg?s=612x612&w=0&k=20&c=gmFQpr79wiKDRNUjuXXv1McQO466U0VJ47_xRhOY4Tk=",
+        ],
+        description: "Skilled in lawn maintenance, planting, and landscape design.",
+    },
+    {
+        id: 108, 
+        name: "Jaya Kantode",
+        charges: 210,
+        experience: 3,
+        rating: 4.1,
+        category: "Pet Care",
+        imgUrl: [
+            "https://www.shutterstock.com/image-photo/pet-care-stethoscope-dog-veterinary-260nw-2475092263.jpg",
+        ],
+        description: "Efficient and reliable runner for grocery shopping, post office, and other quick tasks.",
+    },
+];
 
-const MAIDS_CONFIG = [{
-    id:1,
-    name:"Sita Devi",
-    experience:"5 years",
-    rating:4.5,   
-    charges:"150",  
-    imgUrl:[Img1,Img2,Img3,Img4], 
-    category:"Cleaning"
-},{
-    id:2,       
-    name:"Gita Sharma",
-    experience:"3 years",
-    rating:4.0, 
-    charges:"120",
-    imgUrl:[Img1,Img2,Img3,Img4],
-    category:"Pet Care"
-},
-{
-    id:3,
-    name:"Radha Kumari",
-    experience:"7 years",
-    rating:4.8, 
-    charges:"200",
-    imgUrl:[Img1,Img2,Img3,Img4],
-    category:"Elderly Care"
-},{
-    id:4,
-    name:"Laxmi Patel", 
-    experience:"4 years",
-    rating:4.2, 
-    charges:"180",
-    imgUrl:[],
-    category:"Babysitting"
-},
-{
-    id:5,
-    name:"Sonal Reddy",
-    experience:"6 years",
-    rating:4.6, 
-    charges:"160",
-    imgUrl:[],
-    category:"Cleaning"
-},
-{
-    id:6,
-    name:"Anita Joshi",
-    experience:"2 years",
-    rating:4.1 ,
-    charges:"140",
-    imgUrl:[],
-    category:"Housekeeping"
-},
-{
-    id:7,
-    name:"Meena Iyer",
-    experience:"8 years",
-    rating:4.9, 
-    charges:"220",
-    imgUrl:[],
-    category:"Cooking"  },
-{
-    id:8,
-    name:"Kavita Singh",
-    experience:"5 years",
-    rating:4.3,
-    charges:"190",
-    imgUrl:[],
-    category:"furniture Assembly"
-}];
-
-export {MAIDS_CONFIG};
+export {MAIDS_CONFIG}
