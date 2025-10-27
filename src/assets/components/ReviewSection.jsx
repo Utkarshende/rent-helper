@@ -5,9 +5,9 @@ import ReviewCard from './ReviewCard'
 
 function ReviewSection() {
   return (
-    <div>
+    <div className='pb-6 bg-white'>
       <h1>
-      <Heading heading={"What our customer says"} />
+      <Heading heading={"What our customer says !!!!!!!!!"} className={" m-2 p-8  "}/>
       <div className='flex flex-wrap justify-center'>
       {REVIEWS_CONFIG.map((reviewObj)=>{
         const{name, review,rating}=reviewObj;

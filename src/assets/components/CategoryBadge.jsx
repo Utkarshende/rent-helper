@@ -10,7 +10,7 @@ const CATEGORY_CONFIG = {
     "Furniture Assembly":{icon:Armchair, bgColor:"bg-indigo-600"} ,
     "Driving": {icon:Car, bgColor:"bg-gray-700"} ,
 
-    "Gardening": {icon:Tractor, bgColor:"bg-lime-600"} ,
+    "Gardening": {icon:Tractor, bgColor:"bg-lime-600"},
     "Personal Assistant": {icon:Briefcase, bgColor:"bg-orange-500"} ,
 };
 

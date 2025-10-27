@@ -6,13 +6,13 @@ import MaidCard from '../components/maidCard.jsx'
 
 function AllMaid() {
   return (
-    <div>
+    <div className='bg-gray-50 text-black'>
       <Navbar/>
       <img src={imgExploreMainHeader}
       alt="Explore Maid"
-      className='w-full h-[200px] md:h-[300px] object-contain my-4'/>
+      className='w-full h-[100px] md:h-[100px] object-contain mt-16'/>
 <Heading heading={"This is All Maid Page."}/>
-      <p className='text-center text-lg md:text-xl px-4 md:px-8 mt-4'>
+      <p className='text-center text-lg md:text-xl px-4 md:px-8 mt-4 text-teal-900'>
         Welcome to the Explore Maids page! Here, you can find a wide range of
         professional maids ready to assist you with your cleaning needs.
         Our maids are well trained and experienced in
