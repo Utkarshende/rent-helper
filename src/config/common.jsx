@@ -1,6 +1,5 @@
 import { HandCoins,Headset, LandPlot,Coins } from 'lucide-react';
-import FeatureCard from './../assets/components/FeatureCard.jsx';
-import avatar from 'daisyui/components/avatar/index.js';
+import FeatureCard from '../assets/components/Cards/FeatureCard';
 
 const FEATURES_CONFIG = [
   {
@@ -44,7 +43,7 @@ const REVIEWS_CONFIG=[
     name:"Rohit",
     review:"Professional and reliable maids.",
     rating:4,
-    avatar:"https://i.pravatar.cc/150?img=3"
+    avatar:"https://avatar.iran.liara.run/public/41"
   },
   {
     name:"Sneha",

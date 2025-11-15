@@ -1,5 +1,5 @@
 import React from 'react'
-import RatingStars from './RatingStars.jsx'
+import RatingStars from '../RatingStar/RatingStars.jsx'
 function ReviewCard({
     name,
     review,

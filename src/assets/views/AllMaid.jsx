@@ -1,8 +1,8 @@
-import Navbar from '../components/Navbar.jsx'
-import imgExploreMainHeader from '../../assets/cleaner.png'
-import Heading from '../components/Heading.jsx'
+import Navbar from '../components/Layout/Navbar.jsx'
+import imgExploreMainHeader from '../../images/cleaner.png'
+import Heading from '../components/Layout/Heading.jsx'
 import { MAIDS_CONFIG } from '../../config/maids.jsx'
-import MaidCard from '../components/maidCard.jsx'
+import {CATEGORY_CONFIG} from '../components/Cards/maidCard.jsx'
 
 function AllMaid() {
   return (

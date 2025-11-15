@@ -1,8 +1,8 @@
 import React from 'react'
-import HeroSection from '../components/HeroSection'
-import Navbar from '../components/Navbar'
-import FeatureSection from '../components/FeatureSection'
-import ReviewSection from '../components/ReviewSection'
+import HeroSection from '../components/Sections/HeroSection'
+import Navbar from '../components/Layout/Navbar'
+import FeatureSection from '../components/Sections/FeatureSection'
+import ReviewSection from '../components//Sections/ReviewSection'
 
 function Home() {
   return (

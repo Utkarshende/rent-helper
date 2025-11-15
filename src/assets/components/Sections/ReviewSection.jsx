@@ -1,7 +1,10 @@
 import React from 'react'
-import Heading from './Heading'
-import { REVIEWS_CONFIG } from '../../config/common'
-import ReviewCard from './ReviewCard'
+// Correction 1: Go up to 'components', then down to 'Layout'
+import Heading from '../Layout/Heading.jsx'
+// This path is correct: Go up two levels (to 'assets'), then down to 'config'
+import { REVIEWS_CONFIG } from '../../../config/common.jsx'
+// Correction 2: Go up to 'components', then down to 'Cards' (assuming ReviewCard.jsx)
+import ReviewCard from '../Cards/ReviewCard.jsx' 
 
 function ReviewSection() {
   return (
