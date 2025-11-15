@@ -1,7 +1,6 @@
 import FeatureCard from '../Cards/FeatureCard.jsx'
 import { FEATURES_CONFIG} from '../../../config/common.jsx'
-import Heading from '../Layout/Heading.jsx'; // Corrected from '../../Layout/Heading.jsx' based on your previous fixes
-
+import Heading from '../Layout/Heading.jsx'; 
 function FeatureSection() {
   return (
     <div className='text-center text-xl pt-[30px] bg-teal-900 '>

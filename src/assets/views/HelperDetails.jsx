@@ -40,11 +40,9 @@ function HelperDetails() {
     
     const [durationError, setDurationError] = useState("");
 
-    // State for managing the currently displayed image index of the selected helper
     const [currentImageIndex, setCurrentImageIndex]=useState(0);
 
     useEffect(()=>{
-        // When the selected helper changes, update the booking charges and reset image index
         setBookingDetails(prevDetails => ({
             ...prevDetails,
             helperCharges: currentMaid.charges,
@@ -58,7 +56,6 @@ function HelperDetails() {
         
         const couponConfig = COUPON_CODES[bookingDetails.couponCode];
         
-        // Calculate discount (ensure it's an integer as charges are likely integers)
         const discount = Math.floor((baseTotalAmount / 100) * (couponConfig?.discount || 0 ));
         
         const finalTotalAmount = baseTotalAmount - discount;
@@ -79,7 +76,6 @@ function HelperDetails() {
         return (
             <div>
                 <Navbar/>
-                {/* Content wrapper with necessary top padding */}
                 <div className="pt-16">
                     <Heading heading="Helper Not Found" className={"mt-4! mb-4!"}/>
                     <p className="text-center text-xl">The helper ID was not found.</p>

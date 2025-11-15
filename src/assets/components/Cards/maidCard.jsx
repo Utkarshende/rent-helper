@@ -1,4 +1,4 @@
-import StarImg from "../../../images/star.png"; // Path corrected
+import StarImg from "../../../images/star.png"; 
 import StarGreyImg from "../../../images/starGrey.png";
 
 export const CATEGORY_CONFIG = {
