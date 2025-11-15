@@ -22,16 +22,18 @@ function AllMaid() {
       <div className='flex flex-wrap justify-center mt-8'>
           {MAIDS_CONFIG.map((maidData)=>{
             const {id,name,experience,charges,category,rating,imgUrl}=maidData;
-return(<MaidCard 
-key={id}
-id={id}
-name={name}
-experience={experience}
-charges={charges}
-category={category}
-rating={rating}
-imgUrl={imgUrl}
-/> ) })}
+            
+            return (
+                <div key={id} className='m-4 p-4 border border-teal-500 rounded-lg shadow-md w-64 text-center'>
+                    <h3 className='text-xl font-semibold text-teal-700'>{name}</h3>
+                    <p className='text-gray-600'>Experience: {experience} years</p>
+                    <p className='text-gray-800 font-bold'>Charges: ${charges}/hr</p>
+                    <p className='text-sm text-gray-500'>Category: {category}</p>
+                    <p className='text-yellow-600'>Rating: {rating} ★</p>
+                  
+                </div>
+            )
+          })}
       </div>
     </div>
   )
