@@ -9,7 +9,6 @@ const CATEGORY_CONFIG = {
     "Cooking": {icon:CookingPot, bgColor:"bg-red-600"} ,
     "Furniture Assembly":{icon:Armchair, bgColor:"bg-indigo-600"} ,
     "Driving": {icon:Car, bgColor:"bg-gray-700"} ,
-
     "Gardening": {icon:Tractor, bgColor:"bg-lime-600"},
     "Personal Assistant": {icon:Briefcase, bgColor:"bg-orange-500"} ,
 };
@@ -19,11 +18,11 @@ function CategoryBadge({category, className}) {
     const IconComponent = config.icon;
 
     return (
-        <span className={`${config.bgColor} flex items-center z-5 rounded-full text-white px-3 py-1 text-sm font-medium absolute top-4 left-6 ${className}`}>
-            {IconComponent && <IconComponent className="h-4 w-4 mr-2 inline-block"/>}
+        <span className={`${config.bgColor} flex items-center z-10 rounded-full text-white px-3 py-1 text-sm font-medium absolute top-4 left-6 ${className}`}>
+            {IconComponent && <IconComponent className="h-4 w-4 mr-2"/>}
             {category} Category
         </span>
     );
 }
 
-export {CategoryBadge ,CATEGORY_CONFIG};
+export {CategoryBadge, CATEGORY_CONFIG};

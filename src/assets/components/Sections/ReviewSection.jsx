@@ -1,27 +1,24 @@
-import React from 'react'
 import Heading from '../Layout/Heading.jsx'
 import { REVIEWS_CONFIG } from '../../../config/common.jsx'
 import ReviewCard from '../Cards/ReviewCard.jsx' 
 
 function ReviewSection() {
-  return (
-    <div className='pb-6 bg-white'>
-      <h1>
-      <Heading heading={"What our customer says !!!!!!!!!"} className={" m-2 p-8  "}/>
-      <div className='flex flex-wrap justify-center'>
-      {REVIEWS_CONFIG.map((reviewObj)=>{
-        const{name, review,rating}=reviewObj;
-        return(<ReviewCard
-        key={name}
-        name={name}
-        review={review}
-        rating={rating}
-        />)
-      })}
+    return (
+        <div className='py-12 bg-white'>
+            <Heading heading={"What Our Customers Say"} className={"mb-8"}/>
+            <div className='flex flex-wrap justify-center max-w-7xl mx-auto px-4'>
+                {REVIEWS_CONFIG.map((reviewObj) => (
+                    <ReviewCard
+                        key={reviewObj.name}
+                        name={reviewObj.name}
+                        review={reviewObj.review}
+                        rating={reviewObj.rating}
+                        avatar={reviewObj.avatar}
+                    />
+                ))}
+            </div>
         </div>
-      </h1>
-    </div>
-  )
+    );
 }
 
-export default ReviewSection
+export default ReviewSection;
