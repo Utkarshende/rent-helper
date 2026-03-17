@@ -6,7 +6,7 @@ function AllMaid() {
     const maids = [
         {
         id: 101,
-        name: "Rama Shree",
+        name: "Raja Shree",
         charges: 250,
         experience: 5,
         rating: 4.8,

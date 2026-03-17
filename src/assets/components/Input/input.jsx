@@ -12,8 +12,6 @@ function Input({ type, placeholder, value, onChange, className, required, min })
             className={className}
             required={required}
             min={min}
-            
-            // 🎯 The two critical properties for controlled components:
             value={value} 
             onChange={(e) => onChange(e.target.value)}
         />
