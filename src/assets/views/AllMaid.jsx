@@ -60,7 +60,6 @@ function AllMaid() {
                     {maids.map(maid => (
                         <div key={maid.id} className='bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 border-t-4 border-teal-500'>
                             
-                            {/* Header: Name and Rating */}
                             <div className="flex justify-between items-start mb-4 border-b pb-3">
                                 <p className='text-2xl font-bold text-gray-800 flex items-center'>
                                     {maid.name}
