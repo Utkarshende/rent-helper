@@ -69,7 +69,7 @@ function AllMaid() {
                                 </div>
                             </div>
                             
-                            {/* Details Grid */}
+                           
                             <div className="space-y-3 text-sm text-gray-700">
                                 <div className='flex justify-between items-center'>
                                     <span className="font-medium flex items-center text-teal-700">
