@@ -93,7 +93,6 @@ function AllMaid() {
                                 </div>
                             </div>
 
-                            {/* Specialty/Description */}
                             <div className="mt-4 p-3 bg-teal-50 rounded-lg">
                                 <p className='text-sm font-semibold text-teal-800 mb-1'>Specialty:</p>
                                 <p className='text-base text-gray-700'>{maid.specialty}</p>
