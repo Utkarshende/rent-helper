@@ -18,7 +18,6 @@ function Login({ handleLogin }) {
             return;
         }
 
-        // --- SIMULATED LOGIN LOGIC ---
         if (email === 'test@example.com' && password === 'password123') {
             console.log('Login successful.');
             // This is where you would get user data from a server:
