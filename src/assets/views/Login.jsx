@@ -60,7 +60,6 @@ function Login({ handleLogin }) {
                             </div>
                         </div>
 
-                        {/* Password Field */}
                         <div>
                             <label 
                                 htmlFor="password" 
