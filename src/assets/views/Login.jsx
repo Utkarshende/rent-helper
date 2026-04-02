@@ -81,14 +81,12 @@ function Login({ handleLogin }) {
                             </div>
                         </div>
 
-                        {/* Error Message Display */}
                         {error && (
                             <p className="text-sm text-red-600 text-center bg-red-50 p-2 rounded-md border border-red-200">
                                 {error}
                             </p>
                         )}
 
-                        {/* Submit Button */}
                         <div>
                             <button
                                 type="submit"
